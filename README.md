@@ -1,16 +1,11 @@
 # todo_app
 
-A new Flutter project.
+# login details
+username: user1
+password: pass1
 
-## Getting Started
+# login status 
+login success flag is saved in shared preferences for Android and keychain for IOS
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# ToDos list data management
+ToDos list data is saved in NoSQL database called Hive.
