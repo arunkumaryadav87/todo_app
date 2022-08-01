@@ -19,6 +19,7 @@ class ToDosController extends GetxController {
 
   var todos = RxList<ToDos>([]);
   List<ToDos> _allToDos = [];
+  int completeCount = 0;
 
   logout() async {
     // controller destroyed after login successful all previous views replaced
@@ -47,14 +48,22 @@ class ToDosController extends GetxController {
         },
       );
     }
-
+    computeCompleteCount();
     updateToDoList();
   }
 
   updateToDoList() {
     todos.clear();
     todos.addAll(_allToDos);
+    computeCompleteCount();
     update();
+  }
+
+  computeCompleteCount() {
+    completeCount = 0;
+    for (var element in _allToDos) {
+      if (element.completed!) completeCount++;
+    }
   }
 
   Future<void> filter(String enteredKeyword) async {

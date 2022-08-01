@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_app/app/config/custom_styles.dart';
-import 'package:todo_app/app/utils/dimensions.dart';
 import 'package:todo_app/app/config/string_constants.dart';
+import 'package:todo_app/app/utils/dimensions.dart';
 import 'package:todo_app/presentation/controllers/todos/todos_controller.dart';
 import 'package:todo_app/presentation/pages/todos/views/todo_cell.dart';
 
@@ -38,7 +38,8 @@ class ToDoListScreen extends GetView<ToDosController> {
             ],
           ),
           body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: Dimensions.standardMargin),
+            padding:
+                EdgeInsets.symmetric(horizontal: Dimensions.standardMargin),
             child: Column(
               children: [
                 TextField(
@@ -76,6 +77,21 @@ class ToDoListScreen extends GetView<ToDosController> {
                           style:
                               TextStyle(fontSize: Dimensions.standardTextSize),
                         ),
+                ),
+                SizedBox(
+                  height: Dimensions.standardMargin,
+                ),
+                Container(
+                  width: Dimensions.screenSizeWidth,
+                  color: Colors.blue,
+                  padding: EdgeInsets.all(Dimensions.smallMargin),
+                  child: Text(
+                    "Total ToDos Completed: ${controller.completeCount}",
+                    style: CustomStyles.textStyle.copyWith(
+                      fontSize: Dimensions.mediumTextSize,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ],
             ),

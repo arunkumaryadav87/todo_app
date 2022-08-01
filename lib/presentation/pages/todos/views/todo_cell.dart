@@ -14,7 +14,7 @@ class ToDosCell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        bottom: Dimensions.standardMargin,
+        bottom: Dimensions.smallMargin,
       ),
       child: Container(
         decoration: BoxDecoration(
@@ -25,12 +25,12 @@ class ToDosCell extends StatelessWidget {
           borderRadius:
               BorderRadius.all(Radius.circular(Dimensions.standardMargin)),
         ),
-        padding: EdgeInsets.symmetric(horizontal: Dimensions.smallMargin, vertical: Dimensions.standardMargin),
+        padding: EdgeInsets.all(Dimensions.smallMargin),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Container(
                 width: 56,
                 height: 56,
@@ -48,28 +48,21 @@ class ToDosCell extends StatelessWidget {
             ),
             SizedBox(width: Dimensions.smallMargin,),
             Expanded(
-              flex: 4,
+              flex: 8,
               child: Text(
                 '${todos.title}',
-                style: CustomStyles.textStyle.copyWith(fontSize: Dimensions.mediumTextSize),
+                style: CustomStyles.textStyle.copyWith(fontSize: Dimensions.smallTextSize),
               ),
             ),
             SizedBox(width: Dimensions.smallMargin,),
             Expanded(
               flex: 1,
               child: GestureDetector(
-                onTap: () {
-                  print("Title: ${todos.title}");
-                  print("Id: ${todos.id}");
-                  Get.find<ToDosController>().updateTaskStatus(todos);
-                },
-                child: FittedBox(
-                  fit: BoxFit.contain, // otherwise the logo will be tiny
-                  child: Icon(
-                    Icons.check,
-                    size: 26,
-                    color: todos.completed ?? false ? Colors.blue : Colors.grey,
-                  ),
+                onTap: () => Get.find<ToDosController>().updateTaskStatus(todos),
+                child: Icon(
+                  Icons.check,
+                  size: 26,
+                  color: todos.completed ?? false ? Colors.blue : Colors.grey,
                 ),
               ),
             ),

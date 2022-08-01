@@ -8,13 +8,11 @@ class RouteHelper {
   static const String splash = '/splash';
   static const String login = '/login';
   static const String toDoList = '/toDoList';
-  // static const String toDoDetail = '/toDoDetail';
 
   static String getInitialRoute()=> initial;
   static String getSplashRoute() => splash;
   static String getLoginRoute() => login;
   static String getToDoListRoute() => toDoList;
-  // static String getToDoDetailRoute() => toDoDetail;
 
   static List<GetPage> routes = [
     GetPage(name: splash, page: () {
