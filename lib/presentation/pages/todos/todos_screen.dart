@@ -53,7 +53,7 @@ class ToDoListScreen extends GetView<ToDosController> {
                   ),
                 ),
                 SizedBox(
-                  height: Dimensions.standardMargin,
+                  height: Dimensions.smallMargin,
                 ),
                 Expanded(
                   child: controller.todos.isNotEmpty
@@ -79,7 +79,7 @@ class ToDoListScreen extends GetView<ToDosController> {
                         ),
                 ),
                 SizedBox(
-                  height: Dimensions.standardMargin,
+                  height: Dimensions.smallMargin,
                 ),
                 Container(
                   width: Dimensions.screenSizeWidth,
